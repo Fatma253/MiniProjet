@@ -1,0 +1,23 @@
+<h1>Liste des huiles</h1>
+<div>
+<table *ngFor="let p of huiles;let i=index">
+  <tr>
+    <td>
+  <img [src]="p.image" width="90%" height="90%">
+</td></tr>
+<tr>
+    <td>Libellé: {{p.libelle}} 
+    L'id: {{p.id}}
+     prix {{p.prix}}  DT
+</td></tr>
+  <br/>
+    <button class="btn btn-secondary"> <a [routerLink]="['/article', p.libelle]" > Détail</a> </button>
+
+          <button class="btn btn-secondary" (click)="onDelete(i)" > Supprimer </button>
+          <button class="btn btn-secondary"> <a [routerLink]="['/Modifier']" > Modifier l'article</a> </button>
+        </table>
+
+
+
+</div>
+

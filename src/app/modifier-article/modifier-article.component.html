@@ -1,0 +1,60 @@
+<div class="bg">
+        <!-- Page Content -->
+        <div class="container">
+          <div class=" bg card border-0 shadow my-9">
+            <div class="card-body p-5">
+              <!-- <h1 class="font-weight-light">Fixed Full Page Background Image</h1>
+              <p class="lead">In this snippet, the background image is fixed to the body element. Content on the page will scroll, but the image will remain in a fixed position!</p>
+              
+              <p class="lead">Scroll down...</p> -->
+              <form #f="ngForm">
+              <div class="form-group">
+                <label for="id">
+                    Id:
+                </label>
+                <input type="number" id="id" name="id" [(ngModel)]="ident" class="form-control" required #identif>
+            </div>
+            <div *ngIf="identif.invalid && identif.dirty" class="alert alert-danger">
+                L'identifiant doit etre un nombre
+            </div>
+            <div class="form-group">
+                <label for="libelle">
+                    Libelle:
+                </label>
+                <input type="text" id="libelle" name="lib" [(ngModel)]="libelle" class="form-control" required pattern="[A-Z][a-zA-Z]+" #lib="ngModel" >
+            </div>
+            <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert-danger">
+                Libelle !!!!
+            </div>
+           <!-- <div class="form-group">
+                <label for="img">
+                    Image:
+                </label>
+                <input type="text" id="img" name="i" [(ngModel)]="img" class="form-control" pattern="../[a-zA-Z]+" required #i="ngModel">
+    
+            </div>-->
+            <div *ngIf="i.errors?.pattern && i.invalid && i.dirty" class="alert alert-danger">
+                Choisr une image
+            </div>
+            <div class="form-group">
+                <label for="prix">
+                    Prix:
+                </label>
+                <input type="number" id="prix" name="p" [(ngModel)]="prix" class="form-control" required  #p="ngModel">
+    
+            </div>
+            <div *ngIf="p.invalid && p.dirty" class="alert alert-danger">
+                    Le prix doit etre un nombre
+                </div>
+               
+                            <br>
+                            <button type="submit" (click)="onSubmit(ident,libelle,img,prix,bool,race,gender)" class="btn btn-success" [disabled]="f.invalid">Enregistrer</button>
+            <input type="reset" class="btn btn-danger"  value="Vider"/>
+            <!--<div [hidden] ="!submitted"></div>-->
+                       
+              
+            </form>
+            </div>
+          </div>
+        </div>
+        </div>
