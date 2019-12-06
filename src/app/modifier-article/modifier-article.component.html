@@ -1,4 +1,4 @@
-<div class="bg">
+<!--<div class="bg">
         <!-- Page Content -->
         <div class="container">
           <div class=" bg card border-0 shadow my-9">
@@ -48,13 +48,53 @@
                 </div>
                
                             <br>
-                            <button type="submit" (click)="onSubmit(ident,libelle,img,prix,bool,race,gender)" class="btn btn-success" [disabled]="f.invalid">Enregistrer</button>
+                            <button type="submit" (click)="onSubmit(ident,libelle,img,prix)" class="btn btn-success" [disabled]="f.invalid">Enregistrer</button>
             <input type="reset" class="btn btn-danger"  value="Vider"/>
-            <!--<div [hidden] ="!submitted"></div>-->
+            <!--<div [hidden] ="!submitted"></div>
                        
               
             </form>
             </div>
           </div>
         </div>
+        </div>-->
+        <br/>
+<form [formGroup]="productForm" (ngSubmit)="onSubmitForm()">
+<h3>modifer un produit</h3>
+
+
+<div class="container">
+    
+        <div class="form-group" >
+            <label for="id">
+                Identifiant du produit
+            </label>
+            <input type="number" id="id" name="id"   class="form-control"  formControlName="id" >
         </div>
+        <div *ngIf="idProduct.invalid && idProduct.dirty" class="alert alert-danger">
+            L'identifiant est obligatoire
+            </div>
+        
+        <div class="form-group">
+            <label for="libelle">
+                 Libellé du produit
+            </label>
+            <input type="text" id="libelle" name="lib"
+         class="form-control" formControlName="libelle">
+            </div>
+
+         
+        
+
+           <br/>   
+     
+        <button type="submit" class="btn btn-success"  >Enregistrer</button>
+        <input type="reset" class="btn btn-danger" (click)="f.reset();submitted=false;" value="Vider"/>
+        <div [hidden] ="!submitted">
+            {{message}}
+        </div>
+
+    
+
+</div>
+</form>

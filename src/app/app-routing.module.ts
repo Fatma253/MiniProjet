@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:"Modifier",component:ModifierArticleComponent},
   {path:"Article/:libelle",component:ArticleComponent},
 
-  {path:"**",component:ErreurComponent},
+  {path:"**",component:ArticleComponent},
   {path:'', redirectTo:'Afficher', pathMatch:'full'}
 
 ];

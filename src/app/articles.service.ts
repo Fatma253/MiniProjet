@@ -7,16 +7,16 @@ import { articles } from './articles';
 export class ArticlesService {
   Produits=[
 
-    new articles (1112345,"Mandarine",40,"../assets/mandarine.jpg"),
-    new articles (1456982,"Lavande",40,"../assets/lavande.jpg"),
-    new articles (1456982,"Orange",40,"../assets/orange.jpg"),
-    new articles (5698741,"Cedre",40,"../assets/cèdre.jpg"),
-    new articles (96325874,"Citronnelle",40,"../assets/citronnelle.jpg"),
-    new articles (1254789,"Ravintsara",40,"../assets/ravintsara.jpg"),
-    new articles (1265987,"Ylangylang",40,"../assets/ylang ylang.jpg"),
-    new articles (8547962,"Bergamote",40,"../assets/bergamote.jpg"),
-    new articles (12345698,"Teatree",40,"../assets/teatree.jpg"),
-    new articles (45698712,"eucalyptus",40,"../assets/eucalyptus.jpg")];
+    new articles (1112345,"Mandarine",21.850,"../assets/mandarine.jpg"),
+    new articles (1456982,"Lavande",26.560,"../assets/lavande.jpg"),
+    new articles (1456982,"Orange",22.545,"../assets/orange.jpg"),
+    new articles (5698741,"Cedre",32.645,"../assets/cèdre.jpg"),
+    new articles (96325874,"Citronnelle",41.255,"../assets/citronnelle.jpg"),
+    new articles (1254789,"Ravintsara",22.360,"../assets/ravintsara.jpg"),
+    new articles (1265987,"Ylangylang",38.140,"../assets/ylang ylang.jpg"),
+    new articles (8547962,"Bergamote",31.165,"../assets/bergamote.jpg"),
+    new articles (12345698,"Teatree",25.220,"../assets/teatree.jpg"),
+    new articles (45698712,"eucalyptus",27.330,"../assets/eucalyptus.jpg")];
   
 
 

@@ -11,7 +11,7 @@
      prix {{p.prix}}  DT
 </td></tr>
   <br/>
-    <button class="btn btn-secondary"> <a [routerLink]="['/article', p.libelle]" > Détail</a> </button>
+    <button class="btn btn-secondary"> <a [routerLink]="['/Article', p.libelle]" > Détail</a> </button>
 
           <button class="btn btn-secondary" (click)="onDelete(i)" > Supprimer </button>
           <button class="btn btn-secondary"> <a [routerLink]="['/Modifier']" > Modifier l'article</a> </button>

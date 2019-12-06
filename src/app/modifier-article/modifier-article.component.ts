@@ -24,3 +24,5 @@ onSubmit(ident:number,libelle:string,img:string,prix:number){
   this.service.modiferArticle;
 }
 }
+
+
