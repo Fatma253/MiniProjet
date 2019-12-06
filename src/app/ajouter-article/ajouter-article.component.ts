@@ -15,14 +15,20 @@ export class AjouterArticleComponent implements OnInit {
   message:string="";
     productForm:FormGroup;
     submitted:boolean = false;
+  check:boolean;
+  date:Date;
+
   ngOnInit() {
   
   this.productForm = new FormGroup(
     { id:new FormControl('',Validators.required),
     prix:new  FormControl('',Validators.required),
     image:new FormControl('',Validators.required),
+    date:new FormControl('',Validators.required),
+
+
    libelle:new FormControl('',[Validators.required, Validators.pattern('[A-Z][a-zA-Z]+')])});
-  
+
   }
    
   
@@ -35,7 +41,7 @@ export class AjouterArticleComponent implements OnInit {
    console.log(this.productForm.get('check').value);
 
 
-   const ajout= this.produitsService.addArticle(this.idProduct.value,this.libelleProduct.value,this.prixProduct.value);
+   const ajout= this.produitsService.addArticle(this.idProduct.value,this.libelleProduct.value,this.prixProduct.value,this.imageProduct.value,this.checkedProduct.value,this.dateProduct.value);
    this.submitted =true;
   
     if(ajout)
@@ -44,7 +50,12 @@ export class AjouterArticleComponent implements OnInit {
           this.message="Le produit d'id "+ this.id+" existe déjà !"; 
   
   }
-  
+
+  public get   dateProduct()
+  { return this.productForm.get('check'); }
+  public get checkedProduct()
+  { return this.productForm.get('check'); }
+ 
   
    public get idProduct()
    { return this.productForm.get('id'); }
