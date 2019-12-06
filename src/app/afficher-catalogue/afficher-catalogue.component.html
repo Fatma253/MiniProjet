@@ -1,20 +1,25 @@
 <h1>Liste des huiles</h1>
+<input type="text" name="text" [(ngModel)]="rech" placeholder="search">
 <div>
-<table *ngFor="let p of huiles;let i=index">
+<table *ngFor="let p of huiles | search:rech ;let i=index" >
   <tr>
     <td>
-  <img [src]="p.image" width="90%" height="90%">
+  <img [src]="p.image" width="50%" height="60%">
 </td></tr>
-<tr>
-    <td>Libellé: {{p.libelle}} 
-    L'id: {{p.id}}
-     prix {{p.prix}}  DT
+<tr id="conteneur">
+    <td>Nom: {{p.libelle}} <br/>
+    L'id: {{p.id}} <br/>
+     prix {{p.prix}}  DT <br/>
+     La date de mise en vente : {{p.date | date:'fullDate'}}
+     <ng-container *ngIf="check==false " >
+     <p>{{solde}} </p>
+    </ng-container>
 </td></tr>
   <br/>
     <button class="btn btn-secondary"> <a [routerLink]="['/Article', p.libelle]" > Détail</a> </button>
 
           <button class="btn btn-secondary" (click)="onDelete(i)" > Supprimer </button>
-          <button class="btn btn-secondary"> <a [routerLink]="['/Modifier']" > Modifier l'article</a> </button>
+          <button class="btn btn-secondary"> <a  [routerLink]="['/Modifier', p.id]" > Modifier l'article</a> </button>
         </table>
 
 

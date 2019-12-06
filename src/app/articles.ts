@@ -5,7 +5,20 @@ export class articles {
     private _libelle:string;
     private _prix:number;
     private _image: string;
-
+    private _check: boolean;
+    private _date: Date;
+    public get date(): Date {
+        return this._date;
+    }
+    public set date(value: Date) {
+        this._date = value;
+    }
+    public get check(): boolean {
+        return this._check;
+    }
+    public set check(value: boolean) {
+        this._check = value;
+    }
     
       public get image(): string {
           return this._image;
@@ -33,11 +46,12 @@ export class articles {
           this._prix = value;}
   
           
-      constructor(_id: number, _libelle: string,_prix :number,_image: string)
+      constructor(_id: number, _libelle: string,_prix :number,_image: string,_check:boolean,_date : Date )
       {
           this._id=_id;
           this._libelle=_libelle;
           this._prix=_prix;
           this._image=_image;
-  
+          this._check=_check;
+          this._date=_date;
        }}

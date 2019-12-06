@@ -15,7 +15,6 @@ export class AjouterArticleComponent implements OnInit {
   message:string="";
     productForm:FormGroup;
     submitted:boolean = false;
-  
   ngOnInit() {
   
   this.productForm = new FormGroup(
@@ -33,8 +32,10 @@ export class AjouterArticleComponent implements OnInit {
    console.log(this.productForm.get('libelle').value);
    console.log(this.productForm.get('prix').value);
    console.log(this.productForm.get('image').value);
+   console.log(this.productForm.get('check').value);
 
-   const ajout= this.produitsService.addArticle(this.idProduct.value,this.libelleProduct.value,this.prixProduct.value,this.imageProduct.value);
+
+   const ajout= this.produitsService.addArticle(this.idProduct.value,this.libelleProduct.value,this.prixProduct.value);
    this.submitted =true;
   
     if(ajout)
@@ -43,6 +44,7 @@ export class AjouterArticleComponent implements OnInit {
           this.message="Le produit d'id "+ this.id+" existe déjà !"; 
   
   }
+  
   
    public get idProduct()
    { return this.productForm.get('id'); }

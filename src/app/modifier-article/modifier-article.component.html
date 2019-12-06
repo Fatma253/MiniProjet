@@ -1,12 +1,12 @@
 <!--<div class="bg">
-        <!-- Page Content -->
+         Page Content
         <div class="container">
           <div class=" bg card border-0 shadow my-9">
             <div class="card-body p-5">
-              <!-- <h1 class="font-weight-light">Fixed Full Page Background Image</h1>
+             <h1 class="font-weight-light">Fixed Full Page Background Image</h1>
               <p class="lead">In this snippet, the background image is fixed to the body element. Content on the page will scroll, but the image will remain in a fixed position!</p>
               
-              <p class="lead">Scroll down...</p> -->
+              <p class="lead">Scroll down...</p> 
               <form #f="ngForm">
               <div class="form-group">
                 <label for="id">
@@ -26,13 +26,13 @@
             <div *ngIf="lib.errors?.pattern && lib.dirty" class="alert alert-danger">
                 Libelle !!!!
             </div>
-           <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="img">
                     Image:
                 </label>
                 <input type="text" id="img" name="i" [(ngModel)]="img" class="form-control" pattern="../[a-zA-Z]+" required #i="ngModel">
     
-            </div>-->
+            </div>
             <div *ngIf="i.errors?.pattern && i.invalid && i.dirty" class="alert alert-danger">
                 Choisr une image
             </div>
@@ -50,14 +50,14 @@
                             <br>
                             <button type="submit" (click)="onSubmit(ident,libelle,img,prix)" class="btn btn-success" [disabled]="f.invalid">Enregistrer</button>
             <input type="reset" class="btn btn-danger"  value="Vider"/>
-            <!--<div [hidden] ="!submitted"></div>
+            <div [hidden] ="!submitted"></div>
                        
               
             </form>
             </div>
           </div>
         </div>
-        </div>-->
+        </div>
         <br/>
 <form [formGroup]="productForm" (ngSubmit)="onSubmitForm()">
 <h3>modifer un produit</h3>
@@ -97,4 +97,53 @@
     
 
 </div>
-</form>
+</form>-->
+
+
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" ></span>
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Editer un Article</h3>
+          </div>
+          <div class="card-body">
+          <form [formGroup]="modifForm" (ngSubmit)="editerarticle()">
+          <div class="form-group">
+                <label>id original</label>
+                <input type="text"   placeholder="obligatoire"  class="form-control rounded-0"
+                formControlName="id" >
+              </div>
+              <!--
+              <div class="form-group">
+                <label>matricule</label>
+                <input type="text"     class="form-control rounded-0" 
+                formControlName="matricule">
+              </div>-->
+              <div class="form-group">
+                <label>libelle</label>
+                <input type="text"   class="form-control rounded-0"
+                formControlName="libelle"  >
+              </div>
+              
+              
+              <div class="form-group">
+                <label>prix</label>
+                <input type="text"  class="form-control rounded-0"
+                formControlName="prix" >
+              </div>
+              
+              <div class="form-group">
+                <label>Date de mise en vente</label>
+                <input type="date"  class="form-control rounded-0"
+                formControlName="date" >
+              </div>
+              
+              <button type="submit"  class="btn btn-warning float-right" (click)="Retour()">Editer</button>
+              <button type="button"  class="btn btn-danger " > <a [routerLink]="['/Afficher']" >Annuler</a></button>
+              </form>
+          </div>
+        </div>
+      </div>
+</div>

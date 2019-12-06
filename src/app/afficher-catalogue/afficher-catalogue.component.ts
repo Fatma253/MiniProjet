@@ -9,11 +9,13 @@ import { ArticlesService } from '../articles.service';
 })
 export class AfficherCatalogueComponent implements OnInit {
   huiles=[];
-  a =new articles (14526789,"Nouveau produit",40,"");
- 
+  /*a =new articles ({ _id: 14526789, _libelle: "Nouveau produit", _prix: 40, _image: "",  });*/
+  rech:string;
+  solde:string="Cet article sera soldé plustard ";
    constructor(private ser:ArticlesService) {
      this.huiles=this.ser.Produits;
     }
+
 
 
 onDelete (i){

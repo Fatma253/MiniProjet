@@ -10,6 +10,8 @@ import { AjouterArticleComponent } from './ajouter-article/ajouter-article.compo
 import { ErreurComponent } from './erreur/erreur.component';
 import { ArticleComponent } from './article/article.component';
 import { MenuComponent } from './menu/menu.component';
+import { PagePrincipaleComponent } from './page-principale/page-principale.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MenuComponent } from './menu/menu.component';
     AjouterArticleComponent,
     ErreurComponent,
     ArticleComponent,
-    MenuComponent
+    MenuComponent,
+    PagePrincipaleComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

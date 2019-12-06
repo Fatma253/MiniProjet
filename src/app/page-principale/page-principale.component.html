@@ -1,0 +1,13 @@
+<body><section class="ConnexionForm">
+        <form [formGroup]="ConnexionForm" (ngSumbit)="SumbitConnexion()">
+                <h2>  Se connecter </h2>
+                    <div class="textbox">
+                        <input type="email" id="utilisateur" formControlName="utilisateur" placeholder="Ecrire ici votre email">
+                    </div>
+                    <div class="textbox">
+                        <input type="password" id="password" formControlName="password" placeholder="Ecrire ici votre mot de passe">
+                    </div>
+                <button type="sumbit"  class="btn" [routerLink]="'/Afficher'">Se connecter</button> 
+        </form>
+</section>
+</body>

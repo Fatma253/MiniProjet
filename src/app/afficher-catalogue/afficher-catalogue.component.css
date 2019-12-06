@@ -1,9 +1,18 @@
-/*ul
+ul
 {
 display: flex;
 justify-content: space-between;
-}*/
+}
+h1{color: lightcoral;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+text-align: center;}
 .c1
 {
     font-weight: bold;
+}
+#conteneur {
+    display:   flex;
+    flex-wrap : wrap;
 }
